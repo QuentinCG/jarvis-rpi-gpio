@@ -138,7 +138,7 @@ if __name__ == "__main__":
                                  edgeDetectionEvent = event_type,
                                  phrase = args.request,
                                  mute = args.mute,
-                                verbose = args.verbose)
+                                 verbose = args.verbose)
 
   # Add signals catching to quit application when jarvis ends
   for sig in [signal.SIGTERM, signal.SIGINT, signal.SIGHUP, signal.SIGQUIT]:
