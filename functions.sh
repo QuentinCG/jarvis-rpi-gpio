@@ -1,8 +1,26 @@
-#!/bin/bash
-# Here you can create functions which will be available from the commands file
-# You can also use here user variables defined in your config file
-# To avoid conflicts, name your function like this
-# pg_XX_myfunction () { }
-# pg for PluGin
-# XX is a short code for your plugin, ex: ww for Weather Wunderground
-# You can use translations provided in the language folders functions.sh
+#!/usr/bin/env bash
+
+# Execute Jarvis command every time a edge event is detected for a specific GPIO (asynchronous)
+# $1 (int): PIN of the GPIO to check
+# $2 (string): Pull up/down mode (UP/DOWN)
+# $3 (string): Edge detection events (RISING/FALLING/BOTH)
+# $4 (string): Request to send to Jarvis when a edge event is detected
+# $5 (bool): Mute Jarvis response ("True" for Jarvis not answering with speakers, else "False")
+# $6 (bool, optional): Silent ("True" for no Jarvis response, "False" or no value for Jarvis response)
+jv_pg_rg_asynch_edge_detect_gpio()
+{
+  # Start the server
+  local dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+  local mute_arg=""
+  if [ $5 = "True" ]; then
+    mute_arg="--mute"
+  fi
+
+  local verbose_arg=""
+  if [ $6 = "False" ]; then
+    verbose_arg="--verbose"
+  fi
+
+  nohup python $dir/script/waitGpio.py --gpio $1 --pullUp $2 --edgeDetectionEvent $3 $mute_arg $verbose_arg >/dev/null 2>/dev/stdout &
+}
