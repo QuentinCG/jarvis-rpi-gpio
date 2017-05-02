@@ -13,7 +13,7 @@
 [[ -z $(which python-rpi.gpio) ]] && sudo apt-get --yes --force-yes install python-rpi.gpio
 [[ -z $(which python3-rpi.gpio) ]] && sudo apt-get --yes --force-yes install python3-rpi.gpio
 sudo pip2 install --upgrade RPi.GPIO
-sudo pip3 install --upgrade RPi.GPIO
+#sudo pip3 install --upgrade RPi.GPIO
 
 # Copy latest version of gpio read-write python script
 #wget -P script/ https://raw.githubusercontent.com/QuentinCG/Base-Scripts/master/Raspberry_Pi/utils/readWriteGpio.py
