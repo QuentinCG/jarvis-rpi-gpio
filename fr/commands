@@ -1,1 +1,1 @@
-GPIO_EVENT_15_RISING_DETECTED==say "Je te vois!"
+*GPIO*EVENT*15*RISING*DETECTED*==say "Je te vois!"
