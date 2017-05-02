@@ -31,7 +31,7 @@ Jarvis: Le GPIO x est à l'état bas.
 
 2) Configure the <a target="_blank" href="https://github.com/QuentinCG/jarvis-rpi-gpio/blob/master/hooks/program_startup">program startup</a> to match your PIN and configuration (don't edit if you keep the PINOUT explained in this README).
 
-3) Connect your PIR sensor to Raspberry PI as followed:
+3) Connect your PIR sensor to Raspberry PI as followed (or any other digital sensor):
 
 PIR Sensor  | Raspberry Pi
 -------- |  --------
