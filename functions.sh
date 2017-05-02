@@ -9,6 +9,8 @@
 # $6 (bool, optional): Silent ("True" for no Jarvis response, "False" or no value for Jarvis response)
 jv_pg_rg_asynch_edge_detect_gpio()
 {
+  jv_debug "Starting GPIO $1-Jarvis server PULL-$2: request '$4' will be sent to Jarvis when edge detection event $3 happens."
+
   # Start the server
   local dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -22,5 +24,5 @@ jv_pg_rg_asynch_edge_detect_gpio()
     verbose_arg="--verbose"
   fi
 
-  nohup python $dir/script/waitGpio.py --gpio $1 --pullUp $2 --edgeDetectionEvent $3 $mute_arg $verbose_arg >/dev/null 2>/dev/stdout &
+  nohup python $dir/script/waitGpio.py --gpio $1 --pullUp $2 --edgeDetectionEvent $3 --request "$4" $mute_arg $verbose_arg >/dev/null 2>/dev/stdout &
 }
