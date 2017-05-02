@@ -1,1 +1,1 @@
-jv_pg_rg_asynch_edge_detect_gpio 15 UP RISING "GPIO EVENT 15 RISING DETECTED" False False
+jv_pg_rg_asynch_edge_detect_gpio 15 UP RISING "GPIO EVENT 15 RISING DETECTED" False True
