@@ -84,7 +84,7 @@ class JarvisGpioServer():
 
   def properExit(self, signum, frame):
     # Exit the script properly
-    logging.debug("Stopping GPIO edge detection event script.")
+    print("Stopping GPIO {} edge detection event script.".format(str(self.gpio)))
     # Clean all GPIO changes made by this script...
     GPIO.cleanup()
     # ... and exit this script without error (normal exit of the program)
