@@ -7,7 +7,7 @@
 
 # Install pip
 [[ -z $(which pip) ]] && sudo apt-get --yes --force-yes install python-pip
-[[ -z $(which python3-pip) ]] && sudo apt-get --yes --force-yes install python3-pip
+[[ -z $(which pip3) ]] && sudo apt-get --yes --force-yes install python3-pip
 
 # Install & Upgrade Raspberry Pi GPIO python library
 [[ -z $(which python-rpi.gpio) ]] && sudo apt-get --yes --force-yes install python-rpi.gpio
